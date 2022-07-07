@@ -25,10 +25,10 @@ window.addEventListener('load', function () {
     var fl = document.querySelectorAll('#float');
     for(var i=0;i<fl.length;i++){
         fl[i].addEventListener('mouseenter', function () {
-            this.classList.add('float_top');
+            this.classList.add('shadow');
         })
         fl[i].addEventListener('mouseleave', function () {
-            this.classList.remove('float_top');
+            this.classList.remove('shadow');
         })
     }
     //购物车
@@ -41,7 +41,7 @@ window.addEventListener('load', function () {
             flag=false;
             cart.classList.add('cart_change');
             con.classList.add('cart_det_change');
-            con.classList.add('float_top');
+            con.classList.add('shadow');
             flag=true;
             setTimeout(function(){
                 con.innerHTML = '购物车中还没有商品，赶紧选购吧！';
@@ -57,6 +57,7 @@ window.addEventListener('load', function () {
        
         
     })
+    //app下载
     var download_content = document.querySelector('.download_content');
     var download = document.querySelector('.dl_app');
     download.addEventListener('mouseenter',function(){
@@ -65,5 +66,14 @@ window.addEventListener('load', function () {
     download.addEventListener('mouseleave', function () {
         download_content.classList.remove('download_change');
     })
-
+    //轮播图区域导航栏交互
+    var phone=document.querySelector('.phone');
+    var phone_area = document.querySelector('.phone_area');
+    phone.addEventListener('mouseenter',function(){
+        phone_area.classList.add('area_change');
+        phone_area.style.backgroudColor ='#fff!important';
+    })
+    phone.addEventListener('mouseleave', function () {
+        phone_area.classList.remove('area_change');
+    })
 })
