@@ -43,12 +43,17 @@ body {
   height: 100px !important;
   transition: all 0.5s;
 }
+.download_change {
+  height: 148px !important;
+  transition: all 0.5s;
+}
 .header {
   width: 100%;
   height: 40px;
   background-color: #333;
 }
 .header .top {
+  position: relative;
   width: 1226px;
   height: 100%;
 }
@@ -63,6 +68,7 @@ body {
   line-height: 40px;
 }
 .header .top .left ul {
+  position: relative;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -70,6 +76,38 @@ body {
 .header .top .left li a {
   color: #b0b0b0;
   font-size: 12px;
+}
+.header .top .left li .download {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  top: 40px;
+  left: 75%;
+}
+.header .top .left li .download .download_content {
+  position: absolute;
+  width: 124px;
+  height: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  overflow: hidden;
+  z-index: 11;
+}
+.header .top .left li .download .download_content img {
+  width: 90px;
+  height: 90px;
+  margin: 18px 17px 12px 17px;
+  vertical-align: middle;
+}
+.header .top .left li .download .download_content p {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
 }
 .header .top .right {
   height: 100%;
@@ -105,7 +143,26 @@ body {
   font-weight: 800;
   line-height: 40px;
 }
-.header .top .right ul .cart a span {
+.header .top .right ul .cart a .cart_detail {
+  position: absolute;
+  right: 0;
+  margin: 0;
+}
+.header .top .right ul .cart a .cart_detail .content {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  width: 316px;
+  height: 0;
+  margin: 0;
+  text-align: center;
+  line-height: 100px;
+  font-size: 12px;
+  color: #424242;
+  overflow: hidden;
+}
+.header .top .right ul .cart a .cart_text {
   position: relative;
   top: -2px;
   font-size: 12px;
@@ -113,23 +170,6 @@ body {
   color: #b0b0b0;
   margin: 0;
   vertical-align: middle;
-}
-.header .cart_detail {
-  position: relative;
-  width: 1226px;
-  height: 40px;
-}
-.header .cart_detail .content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #fff;
-  width: 316px;
-  height: 0;
-  text-align: center;
-  line-height: 100px;
-  font-size: 12px;
-  color: #424242;
 }
 .main_top {
   background-color: #fff;
