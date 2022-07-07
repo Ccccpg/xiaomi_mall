@@ -26,8 +26,8 @@ li {
 body {
   background-color: #f5f5f5;
 }
-.float_top {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.shadow {
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.2);
   transition: all 0.5s;
 }
 .cart_change a {
@@ -46,6 +46,10 @@ body {
 .download_change {
   height: 148px !important;
   transition: all 0.5s;
+}
+.area_change {
+  width: 992px !important;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
 }
 .header {
   width: 100%;
@@ -174,13 +178,11 @@ body {
 .main_top {
   background-color: #fff;
   z-index: -2;
-}
-.main_top .main_top {
   width: 1226px;
   height: 100px;
   line-height: 100px;
 }
-.main_top .main_top .logo_pic {
+.main_top .logo_pic {
   float: left;
   margin-top: 22px;
   width: 56px;
@@ -188,24 +190,24 @@ body {
   background: url(../images/logo-mi2.png);
   background-size: 56px;
 }
-.main_top .main_top .nav {
+.main_top .nav {
   float: left;
   margin-left: 175px;
 }
-.main_top .main_top .nav ul {
+.main_top .nav ul {
   display: flex;
   width: 628px;
   height: 100%;
   justify-content: space-between;
 }
-.main_top .main_top .nav ul li a {
+.main_top .nav ul li a {
   color: #333;
 }
-.main_top .main_top .search {
+.main_top .search {
   margin-top: 25px;
   float: right;
 }
-.main_top .main_top .search .text {
+.main_top .search .text {
   padding: 5px;
   float: left;
   width: 223px;
@@ -214,7 +216,7 @@ body {
   color: #757575;
   border: 1px solid #e0e0e0;
 }
-.main_top .main_top .search .sub {
+.main_top .search .sub {
   float: left;
   width: 48px;
   height: 48px;
@@ -226,16 +228,16 @@ body {
   font-weight: 800;
   color: #616161;
 }
-.main_top .main_top .search .sub:hover {
+.main_top .search .sub:hover {
   color: #fff;
   background-color: #ff6700;
   transition: all 0.3s;
 }
-.main_top .banner_area {
+.banner_area {
   width: 1226px;
   position: relative;
 }
-.main_top .banner_area .left {
+.banner_area .left {
   position: absolute;
   top: 0;
   left: 0;
@@ -245,80 +247,110 @@ body {
   background-color: rgba(105, 101, 101, 0.6);
   z-index: 2;
 }
-.main_top .banner_area .left li {
+.banner_area .left > ul > li:hover {
+  background-color: #ff6700;
+}
+.banner_area .left li {
   position: relative;
   height: 42px;
   line-height: 42px;
   padding-left: 30px;
 }
-.main_top .banner_area .left li:hover {
-  background-color: #ff6700;
-}
-.main_top .banner_area .left li a {
+.banner_area .left li a {
   color: #fff;
   font-size: 14px;
 }
-.main_top .banner_area .left li a span {
+.banner_area .left li a span {
   position: absolute;
   right: 20px;
 }
-.main_top .banner_area .right {
-  position: relative;
+.banner_area .left li a .phone_area {
+  position: absolute;
+  top: -20px;
+  left: 234px;
+  width: 0;
+  height: 460px;
+  overflow: hidden;
+  z-index: 99;
+  background-color: #fff;
 }
-.main_top .banner_area .right .swiper-container {
+.banner_area .left li a .phone_area ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.banner_area .left li a .phone_area ul li {
+  width: 25%;
+  height: 76.666px;
+  line-height: 76.66px;
+}
+.banner_area .left li a .phone_area ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 76.66px;
+  color: #333;
+}
+.banner_area .left li a .phone_area ul li a img {
+  margin-left: 20px;
+  vertical-align: middle;
+}
+.banner_area .left li a .phone_area ul li a span {
+  height: 40px;
+}
+.banner_area .right .swiper-container {
   position: relative;
   top: 0;
   left: 0;
   width: 1226px;
   height: 460px;
 }
-.main_top .banner_area .right .swiper-container .swiper-button-prev {
+.banner_area .right .swiper-container .swiper-button-prev {
   position: absolute;
   left: 244px;
 }
-.main_top .banner_area .right .swiper-pagination {
+.banner_area .right .swiper-pagination {
   position: absolute;
   width: 400px;
   left: auto;
   right: 30px;
   bottom: 20px;
 }
-.main_top .banner_area .banner_bot {
+.banner_area .banner_bot {
   margin-top: 14px;
   display: flex;
   justify-content: space-between;
 }
-.main_top .banner_area .banner_bot .ban_l {
+.banner_area .banner_bot .ban_l {
   float: left;
   padding: 3px;
   width: 234px;
   height: 170px;
   background-color: #5f5750;
 }
-.main_top .banner_area .banner_bot .ban_l ul li {
+.banner_area .banner_bot .ban_l ul li {
   position: relative;
   float: left;
   padding: 18px 4px 0 4px;
   width: 76px;
   height: 82px;
 }
-.main_top .banner_area .banner_bot .ban_l ul li a {
+.banner_area .banner_bot .ban_l ul li a {
   text-align: center;
   margin-top: 18px;
   color: #fff;
   opacity: 0.7;
 }
-.main_top .banner_area .banner_bot .ban_l ul li a img {
+.banner_area .banner_bot .ban_l ul li a img {
   position: relative;
   top: 0;
   left: 23px;
   width: 24px;
   height: 24px;
 }
-.main_top .banner_area .banner_bot .ban_l ul li a div {
+.banner_area .banner_bot .ban_l ul li a div {
   font-size: 12px;
 }
-.main_top .banner_area .banner_bot .ban_l ul li a::before {
+.banner_area .banner_bot .ban_l ul li a::before {
   position: absolute;
   content: "";
   background: #665e57;
@@ -327,7 +359,7 @@ body {
   width: 64px;
   height: 1px;
 }
-.main_top .banner_area .banner_bot .ban_l ul li a::after {
+.banner_area .banner_bot .ban_l ul li a::after {
   position: absolute;
   content: "";
   background: #665e57;
@@ -336,19 +368,19 @@ body {
   width: 1px;
   height: 70px;
 }
-.main_top .banner_area .banner_bot .ban_r {
+.banner_area .banner_bot .ban_r {
   display: flex;
   justify-content: space-between;
   margin-left: 14px;
   float: left;
   flex: 1;
 }
-.main_top .banner_area .banner_bot .ban_r a {
+.banner_area .banner_bot .ban_r a {
   display: inline-block;
   width: 316px;
   height: 170px;
 }
-.main_top .banner_area .banner_bot .ban_r a img {
+.banner_area .banner_bot .ban_r a img {
   width: 316px;
 }
 .main .ad {

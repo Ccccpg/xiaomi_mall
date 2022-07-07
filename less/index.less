@@ -5,8 +5,8 @@ body {
 }
 
 //元素浮动样式
-.float_top {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+.shadow {
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, .2);
     transition: all 0.5s;
 }
 
@@ -35,6 +35,12 @@ body {
 .download_change {
     height: 148px !important;
     transition: all 0.5s;
+}
+
+//轮播图区域导航弹出样式
+.area_change {
+    width: 992px !important;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, .2);
 }
 
 //头部样式
@@ -198,221 +204,255 @@ body {
 .main_top {
     background-color: #fff;
     z-index: -2;
+    width: 1226px;
+    height: 100px;
+    line-height: 100px;
 
-    .main_top {
-        width: 1226px;
-        height: 100px;
-        line-height: 100px;
+    .logo_pic {
+        float: left;
+        margin-top: 22px;
+        width: 56px;
+        height: 56px;
+        background: url(../images/logo-mi2.png);
+        background-size: 56px;
+    }
 
-        .logo_pic {
-            float: left;
-            margin-top: 22px;
-            width: 56px;
-            height: 56px;
-            background: url(../images/logo-mi2.png);
-            background-size: 56px;
-        }
+    .nav {
+        float: left;
+        margin-left: 175px;
 
-        .nav {
-            float: left;
-            margin-left: 175px;
+        ul {
+            display: flex;
+            width: 628px;
+            height: 100%;
+            justify-content: space-between;
 
-            ul {
-                display: flex;
-                width: 628px;
-                height: 100%;
-                justify-content: space-between;
-
-                li {
-                    a {
-                        color: #333;
-                    }
-                }
-            }
-        }
-
-        .search {
-            margin-top: 25px;
-            float: right;
-
-            .text {
-                padding: 5px;
-                float: left;
-                width: 223px;
-                height: 48px;
-                outline: none;
-                color: #757575;
-                border: 1px solid #e0e0e0;
-            }
-
-            .sub {
-                float: left;
-                width: 48px;
-                height: 48px;
-                border: 1px solid #e0e0e0;
-                background-color: #fff;
-                border-left: 0;
-                font-family: iconfont;
-                font-size: 24px;
-                font-weight: 800;
-                color: #616161;
-
-                &:hover {
-                    color: #fff;
-                    background-color: #ff6700;
-                    transition: all 0.3s;
+            li {
+                a {
+                    color: #333;
                 }
             }
         }
     }
 
-    //轮播图区域
-    .banner_area {
-        width: 1226px;
-        position: relative;
+    .search {
+        margin-top: 25px;
+        float: right;
 
-        .left {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 20px 0;
-
-            width: 234px;
-            height: 460px;
-            background-color: rgba(105, 101, 101, .6);
-            z-index: 2;
-
-            li {
-                position: relative;
-                height: 42px;
-                line-height: 42px;
-                padding-left: 30px;
-
-                &:hover {
-                    background-color: #ff6700;
-                }
-
-                a {
-                    color: #fff;
-                    font-size: 14px;
-
-                    span {
-                        position: absolute;
-                        right: 20px;
-                    }
-                }
-            }
+        .text {
+            padding: 5px;
+            float: left;
+            width: 223px;
+            height: 48px;
+            outline: none;
+            color: #757575;
+            border: 1px solid #e0e0e0;
         }
 
-        .right {
+        .sub {
+            float: left;
+            width: 48px;
+            height: 48px;
+            border: 1px solid #e0e0e0;
+            background-color: #fff;
+            border-left: 0;
+            font-family: iconfont;
+            font-size: 24px;
+            font-weight: 800;
+            color: #616161;
+
+            &:hover {
+                color: #fff;
+                background-color: #ff6700;
+                transition: all 0.3s;
+            }
+        }
+    }
+}
+
+//轮播图区域
+.banner_area {
+    width: 1226px;
+    position: relative;
+
+    .left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px 0;
+        width: 234px;
+        height: 460px;
+        background-color: rgba(105, 101, 101, .6);
+        z-index: 2;
+        &>ul>li:hover {
+                background-color: #ff6700;
+            }
+        li {
             position: relative;
-            .swiper-container {
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 1226px;
-                height: 460px;
+            height: 42px;
+            line-height: 42px;
+            padding-left: 30px;
+            a {
+                color: #fff;
+                font-size: 14px;
 
-                .swiper-button-prev {
+                span {
                     position: absolute;
-                    left: 244px;
+                    right: 20px;
                 }
-            }
-            .swiper-pagination{
-                position: absolute;
-                width: 400px;
-                    left: auto;
-                    right: 30px;
-                    bottom: 20px;
-            }
 
+                .phone_area {
+                    position: absolute;
+                    top: -20px;
+                    left: 234px;
+                    width: 0;
+                    height: 460px;
+                    overflow: hidden;
+                    z-index: 99;
+                    background-color: #fff;
 
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
 
-        }
+                        li {
+                            width: 25%;
+                            height: 76.666px;
+                            line-height: 76.66px;
 
-        .banner_bot {
-            margin-top: 14px;
-            display: flex;
-            justify-content: space-between;
+                            a {
+                                display: inline-block;
+                                width: 100%;
+                                height: 100%;
+                                line-height: 76.66px;
+                                color: #333;
 
-            .ban_l {
-                float: left;
-                padding: 3px;
-                width: 234px;
-                height: 170px;
-                background-color: #5f5750;
+                                img {
+                                    margin-left: 20px;
+                                    vertical-align: middle;
+                                }
 
-                ul {
-                    li {
-                        position: relative;
-                        float: left;
-                        padding: 18px 4px 0 4px;
-                        width: 76px;
-                        height: 82px;
-
-                        a {
-                            text-align: center;
-                            margin-top: 18px;
-                            color: #fff;
-                            opacity: .7;
-
-                            img {
-                                position: relative;
-                                top: 0;
-                                left: 23px;
-
-                                width: 24px;
-                                height: 24px;
-                            }
-
-                            div {
-                                font-size: 12px;
-                            }
-
-                            &::before {
-                                position: absolute;
-                                content: "";
-                                background: #665e57;
-                                top: -1px;
-                                left: 6px;
-                                width: 64px;
-                                height: 1px;
-                            }
-
-                            &::after {
-                                position: absolute;
-                                content: "";
-                                background: #665e57;
-                                top: 6px;
-                                left: 0;
-                                width: 1px;
-                                height: 70px;
+                                span {
+                                    height: 40px;
+                                }
                             }
                         }
                     }
-
                 }
             }
+        }
+    }
 
-            .ban_r {
-                display: flex;
-                justify-content: space-between;
-                margin-left: 14px;
-                float: left;
-                flex: 1;
+    .right {
 
-                a {
-                    display: inline-block;
-                    width: 316px;
-                    height: 170px;
 
-                    img {
-                        width: 316px;
+        .swiper-container {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 1226px;
+            height: 460px;
+
+            .swiper-button-prev {
+                position: absolute;
+                left: 244px;
+            }
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            width: 400px;
+            left: auto;
+            right: 30px;
+            bottom: 20px;
+        }
+
+
+
+    }
+
+    .banner_bot {
+        margin-top: 14px;
+        display: flex;
+        justify-content: space-between;
+
+        .ban_l {
+            float: left;
+            padding: 3px;
+            width: 234px;
+            height: 170px;
+            background-color: #5f5750;
+
+            ul {
+                li {
+                    position: relative;
+                    float: left;
+                    padding: 18px 4px 0 4px;
+                    width: 76px;
+                    height: 82px;
+
+                    a {
+                        text-align: center;
+                        margin-top: 18px;
+                        color: #fff;
+                        opacity: .7;
+
+                        img {
+                            position: relative;
+                            top: 0;
+                            left: 23px;
+
+                            width: 24px;
+                            height: 24px;
+                        }
+
+                        div {
+                            font-size: 12px;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            background: #665e57;
+                            top: -1px;
+                            left: 6px;
+                            width: 64px;
+                            height: 1px;
+                        }
+
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            background: #665e57;
+                            top: 6px;
+                            left: 0;
+                            width: 1px;
+                            height: 70px;
+                        }
                     }
                 }
-            }
 
+            }
         }
+
+        .ban_r {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 14px;
+            float: left;
+            flex: 1;
+
+            a {
+                display: inline-block;
+                width: 316px;
+                height: 170px;
+
+                img {
+                    width: 316px;
+                }
+            }
+        }
+
     }
 }
 
