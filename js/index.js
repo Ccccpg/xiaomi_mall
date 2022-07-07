@@ -51,11 +51,19 @@ window.addEventListener('load', function () {
         
     })
     cart.addEventListener('mouseleave', function () {
+        con.innerHTML = '';
         cart.classList.remove('cart_change');
         con.classList.remove('cart_det_change');
-        con.innerHTML='';
+       
         
     })
-
+    var download_content = document.querySelector('.download_content');
+    var download = document.querySelector('.dl_app');
+    download.addEventListener('mouseenter',function(){
+        download_content.classList.add('download_change');
+    });
+    download.addEventListener('mouseleave', function () {
+        download_content.classList.remove('download_change');
+    })
 
 })
