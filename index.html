@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="./css/index.css">
 
     <!-- 导入js -->
-<script src="./js/swiper.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/template-web.js"></script>
     <script src="./js/index.js"></script>
 </head>
 
@@ -86,8 +87,7 @@
 
 
         </div>
-        <!-- 主体头部布局 -->
-        <div class="main_top">
+        
             <!-- logo区域 -->
             <div class="main_top wrapper">
                 <a href="" class="logo_pic"></a>
@@ -113,7 +113,17 @@
             <div class="banner_area wrapper">
                 <div class="left">
                     <ul>
-                        <li><a href="">手机<span>></span></a></li>
+                        <li class="phone">
+                            <a href="">
+                                手机
+                                <span>></span>
+                                <div class="phone_area">
+                                    <ul id="phone_all">
+                                
+                                    </ul>
+                                </div>
+
+                            </a></li>
                         <li><a href="">电视<span>></span></a></li>
                         <li><a href="">笔记本 平板<span>></span></a></li>
                         <li><a href="">出现 穿戴<span>></span></a></li>
@@ -126,22 +136,29 @@
                     </ul>
                 </div>
                 <div class="right">
+                    
+                    <!-- swiper -->
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href=""><img src="./uploads/1ff7cd5850e5fac28219402daf88f68f.webp" style="width:1226px ;"/></a>
+                                <a href=""><img src="./uploads/1ff7cd5850e5fac28219402daf88f68f.webp"
+                                        style="width:1226px ;" /></a>
                             </div>
                             <div class="swiper-slide">
-                                <a href=""><img src="./uploads/36b45c624f42fa81732457e3f9773dbd.webp" style="width:1226px ;"/></a>
+                                <a href=""><img src="./uploads/36b45c624f42fa81732457e3f9773dbd.webp"
+                                        style="width:1226px ;" /></a>
                             </div>
                             <div class="swiper-slide">
-                                <a href=""><img src="./uploads/27c7f7fe4e1621bee3fc4acedbe3d9dd.jpg" style="width:1226px ;"/></a>
+                                <a href=""><img src="./uploads/27c7f7fe4e1621bee3fc4acedbe3d9dd.jpg"
+                                        style="width:1226px ;" /></a>
                             </div>
                             <div class="swiper-slide">
-                                <a href=""><img src="./uploads/143ceae1731ac47fe7fa68dde2978bdc.webp" style="width:1226px ;" /></a>
+                                <a href=""><img src="./uploads/143ceae1731ac47fe7fa68dde2978bdc.webp"
+                                        style="width:1226px ;" /></a>
                             </div>
                             <div class="swiper-slide">
-                                <a href=""><img src="./uploads/987c34b474be111ba87f0321082eb2f3.webp" style="width:1226px ;" /></a>
+                                <a href=""><img src="./uploads/987c34b474be111ba87f0321082eb2f3.webp"
+                                        style="width:1226px ;" /></a>
                             </div>
                         </div>
                         <!-- 如果需要分页器 -->
@@ -576,8 +593,18 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+       
+        <!-- 模板 -->
+        <script type="text/html" id="tlp-phone">
+                {{each phone}}
+                <li>
+                    <a href="">
+                        <img src="{{$value.url}}" alt="">
+                        {{$value.text}}
+                    </a>
+                </li>
+                {{/each}}
+        </script>
         <script>
 
             var swiper = new Swiper('.swiper-container', {
@@ -588,6 +615,17 @@
                 spaceBetween: 30,
                 effect: 'fade'
             });
+            var phone = [];
+            for (var i = 0; i < 24; i++) {
+                phone.push({
+                    url: './uploads/littlephone01.webp',
+                    text: 'xiaomi 12s'
+                })
+            }
+            var htmlstr = template('tlp-phone', { phone });
+            console.log(htmlstr)
+            var phone_all = document.querySelector('#phone_all');
+            phone_all.innerHTML = htmlstr;
         </script>
 </body>
 
