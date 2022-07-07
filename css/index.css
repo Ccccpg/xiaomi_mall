@@ -240,7 +240,6 @@ body {
   top: 0;
   left: 0;
   padding: 20px 0;
-  padding-left: 30px;
   width: 234px;
   height: 460px;
   background-color: rgba(105, 101, 101, 0.6);
@@ -250,6 +249,10 @@ body {
   position: relative;
   height: 42px;
   line-height: 42px;
+  padding-left: 30px;
+}
+.main_top .banner_area .left li:hover {
+  background-color: #ff6700;
 }
 .main_top .banner_area .left li a {
   color: #fff;
@@ -259,42 +262,26 @@ body {
   position: absolute;
   right: 20px;
 }
-.main_top .banner_area .right img {
-  vertical-align: middle;
+.main_top .banner_area .right {
+  position: relative;
 }
-.main_top .banner_area .right .mySwiper {
-  width: 100%;
+.main_top .banner_area .right .swiper-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 1226px;
+  height: 460px;
 }
-.main_top .banner_area .right .mySwiper img {
-  width: 100%;
-}
-.main_top .banner_area .right .mySwiper .swiper-button-prev,
-.main_top .banner_area .right .mySwiper .swiper-button-next {
-  color: #757575;
-  font-size: 12px;
-}
-.main_top .banner_area .right .mySwiper .swiper-button-prev:hover,
-.main_top .banner_area .right .mySwiper .swiper-button-next:hover {
-  color: #fff;
-}
-.main_top .banner_area .right .mySwiper .swiper-button-prev {
+.main_top .banner_area .right .swiper-container .swiper-button-prev {
+  position: absolute;
   left: 244px;
 }
-.main_top .banner_area .right .mySwiper .swiper-pagination {
+.main_top .banner_area .right .swiper-pagination {
+  position: absolute;
   width: 400px;
-  left: 826px;
+  left: auto;
+  right: 30px;
   bottom: 20px;
-}
-.main_top .banner_area .right .mySwiper .swiper-pagination .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 50%;
-  border: 2px solid #fff;
-}
-.main_top .banner_area .right .mySwiper .swiper-pagination .swiper-pagination-bullet-active {
-  background: hsla(0, 0%, 100%, 0.4);
-  border: 2px solid rgba(0, 0, 0, 0.4);
 }
 .main_top .banner_area .banner_bot {
   margin-top: 14px;
@@ -524,4 +511,9 @@ body {
   border: 1px solid #ff6700;
   background: #fff;
   color: #ff6700;
+}
+.bottom .bot_bot .tel a:hover {
+  background-color: #ff6700;
+  color: #fff;
+  transition: all 0.4s;
 }

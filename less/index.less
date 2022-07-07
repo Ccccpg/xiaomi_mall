@@ -67,7 +67,7 @@ body {
             }
 
             li {
-                
+
 
                 a {
                     color: #b0b0b0;
@@ -80,6 +80,7 @@ body {
                     width: 100%;
                     top: 40px;
                     left: 75%;
+
                     .download_content {
                         position: absolute;
                         width: 124px;
@@ -275,7 +276,7 @@ body {
             top: 0;
             left: 0;
             padding: 20px 0;
-            padding-left: 30px;
+
             width: 234px;
             height: 460px;
             background-color: rgba(105, 101, 101, .6);
@@ -285,6 +286,11 @@ body {
                 position: relative;
                 height: 42px;
                 line-height: 42px;
+                padding-left: 30px;
+
+                &:hover {
+                    background-color: #ff6700;
+                }
 
                 a {
                     color: #fff;
@@ -299,51 +305,29 @@ body {
         }
 
         .right {
-            img {
-                vertical-align: middle;
-            }
-
-            .mySwiper {
-                width: 100%;
-
-                img {
-                    width: 100%;
-                }
-
-                .swiper-button-prev,
-                .swiper-button-next {
-                    color: #757575;
-                    font-size: 12px;
-
-                    &:hover {
-                        color: #fff;
-                    }
-                }
+            position: relative;
+            .swiper-container {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 1226px;
+                height: 460px;
 
                 .swiper-button-prev {
+                    position: absolute;
                     left: 244px;
                 }
-
-                .swiper-pagination {
-                    width: 400px;
-                    left: 826px;
-                    bottom: 20px;
-
-                    .swiper-pagination-bullet {
-                        width: 10px;
-                        height: 10px;
-                        background: rgba(0, 0, 0, .4);
-                        border-radius: 50%;
-                        border: 2px solid #fff;
-                    }
-
-                    .swiper-pagination-bullet-active {
-                        background: hsla(0, 0%, 100%, .4);
-                        border: 2px solid rgba(0, 0, 0, .4);
-
-                    }
-                }
             }
+            .swiper-pagination{
+                position: absolute;
+                width: 400px;
+                    left: auto;
+                    right: 30px;
+                    bottom: 20px;
+            }
+
+
+
         }
 
         .banner_bot {
@@ -611,7 +595,7 @@ body {
             height: 80px;
             text-align: center;
             border-left: 1px solid #e0e0e0;
-            ;
+
 
             span {
                 font-size: 22px;
@@ -634,6 +618,12 @@ body {
                 border: 1px solid #ff6700;
                 background: #fff;
                 color: #ff6700;
+
+                &:hover {
+                    background-color: #ff6700;
+                    color: #fff;
+                    transition: all 0.4s;
+                }
             }
         }
     }
