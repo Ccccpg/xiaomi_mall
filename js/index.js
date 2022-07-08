@@ -66,14 +66,106 @@ window.addEventListener('load', function () {
     download.addEventListener('mouseleave', function () {
         download_content.classList.remove('download_change');
     })
-    //轮播图区域导航栏交互
+    //轮播图区 手机 类别域导航栏交互
     var phone=document.querySelector('.phone');
-    var phone_area = document.querySelector('.phone_area');
+    var bannerhide_area = null;
     phone.addEventListener('mouseenter',function(){
-        phone_area.classList.add('area_change');
-        phone_area.style.backgroudColor ='#fff!important';
+        bannerhide_area=document.querySelector('.phone>a>.bannerhide_area');
+        bannerhide_area.classList.add('area_change');
+        bannerhide_area.style.backgroudColor ='#fff!important';
     })
     phone.addEventListener('mouseleave', function () {
-        phone_area.classList.remove('area_change');
+        bannerhide_area = document.querySelector('.phone>a>.bannerhide_area');
+        bannerhide_area.classList.remove('area_change');
+    })
+
+    //轮播图区 电视 类别域导航栏交互
+    var tvs = document.querySelector('.tvs');
+    tvs.addEventListener('mouseenter', function () {
+        bannerhide_area = document.querySelector('.tvs>a>.bannerhide_area');
+        bannerhide_area.classList.add('area_change');
+        bannerhide_area.style.backgroudColor = '#fff!important';
+    })
+    tvs.addEventListener('mouseleave', function () {
+        bannerhide_area = document.querySelector('.tvs>a>.bannerhide_area');
+        bannerhide_area.classList.remove('area_change');
+    })
+    //轮播图区 电脑 类别域导航栏交互
+    var computer = document.querySelector('.computer');
+    computer.addEventListener('mouseenter', function () {
+        bannerhide_area = document.querySelector('.computer>a>.bannerhide_area');
+        bannerhide_area.classList.add('area_change');
+        bannerhide_area.style.backgroudColor = '#fff!important';
+    })
+    computer.addEventListener('mouseleave', function () {
+        bannerhide_area = document.querySelector('.computer>a>.bannerhide_area');
+        bannerhide_area.classList.remove('area_change');
+    })
+
+    //轮播图区 穿戴 类别域导航栏交互
+    var watch = document.querySelector('.watch');
+    watch.addEventListener('mouseenter', function () {
+        bannerhide_area = document.querySelector('.watch>a>.bannerhide_area');
+        bannerhide_area.classList.add('area_change');
+        bannerhide_area.style.backgroudColor = '#fff!important';
+    })
+    watch.addEventListener('mouseleave', function () {
+        bannerhide_area = document.querySelector('.watch>a>.bannerhide_area');
+        bannerhide_area.classList.remove('area_change');
+    })
+    //轮播图区 耳机 类别域导航栏交互
+    var earphone = document.querySelector('.earphone');
+    earphone.addEventListener('mouseenter', function () {
+        bannerhide_area = document.querySelector('.earphone>a>.bannerhide_area');
+        bannerhide_area.classList.add('area_change');
+        bannerhide_area.style.backgroudColor = '#fff!important';
+    })
+    earphone.addEventListener('mouseleave', function () {
+        bannerhide_area = document.querySelector('.earphone>a>.bannerhide_area');
+        bannerhide_area.classList.remove('area_change');
+    })
+    //轮播图区 家电 类别域导航栏交互
+    var jiadian = document.querySelector('.jiadian');
+    jiadian.addEventListener('mouseenter', function () {
+        bannerhide_area = document.querySelector('.jiadian>a>.bannerhide_area');
+        bannerhide_area.classList.add('area_change');
+        bannerhide_area.style.backgroudColor = '#fff!important';
+    })
+    jiadian.addEventListener('mouseleave', function () {
+        bannerhide_area = document.querySelector('.jiadian>a>.bannerhide_area');
+        bannerhide_area.classList.remove('area_change');
+    })
+    //轮播图区 路由 类别域导航栏交互
+    var luyou = document.querySelector('.luyou');
+    luyou.addEventListener('mouseenter', function () {
+        bannerhide_area = document.querySelector('.luyou>a>.bannerhide_area');
+        bannerhide_area.classList.add('area_change');
+        bannerhide_area.style.backgroudColor = '#fff!important';
+    })
+    luyou.addEventListener('mouseleave', function () {
+        bannerhide_area = document.querySelector('.luyou>a>.bannerhide_area');
+        bannerhide_area.classList.remove('area_change');
+    })
+    //轮播图区 配件 类别域导航栏交互
+    var parts = document.querySelector('.parts');
+    parts.addEventListener('mouseenter', function () {
+        bannerhide_area = document.querySelector('.parts>a>.bannerhide_area');
+        bannerhide_area.classList.add('area_change');
+        bannerhide_area.style.backgroudColor = '#fff!important';
+    })
+    parts.addEventListener('mouseleave', function () {
+        bannerhide_area = document.querySelector('.parts>a>.bannerhide_area');
+        bannerhide_area.classList.remove('area_change');
+    })
+    //轮播图区 儿童健康 类别域导航栏交互
+    var bags = document.querySelector('.bags');
+    bags.addEventListener('mouseenter', function () {
+        bannerhide_area = document.querySelector('.bags>a>.bannerhide_area');
+        bannerhide_area.classList.add('area_change');
+        bannerhide_area.style.backgroudColor = '#fff!important';
+    })
+    bags.addEventListener('mouseleave', function () {
+        bannerhide_area = document.querySelector('.bags>a>.bannerhide_area');
+        bannerhide_area.classList.remove('area_change');
     })
 })
