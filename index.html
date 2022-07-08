@@ -10,12 +10,12 @@
         content="小米官网直营小米公司旗下所有产品，包括Xiaomi手机系列Xiaomi 12、MIX、Redmi 红米系列、Redmi Note 11、K50、Redmi Note、小米电视、笔记本、米家智能家居等，同时提供小米官方服务及售后支持.">
     <meta name="keywords" content="Xiaomi,redmi,Xiaomi12,Redmi Note 11,Xiaomi MIX Alpha,小米商城">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
     <link rel="stylesheet" href="./css/index.css">
 
     <!-- 导入js -->
-    <script src="./js/swiper.min.js"></script>
+
     <script src="./js/template-web.js"></script>
     <script src="./js/index.js"></script>
 </head>
@@ -219,7 +219,7 @@
                             <span>></span>
                             <div class="bannerhide_area" style="top: -398px;">
                                 <ul id="bags_all">
-                            
+
                                 </ul>
                             </div>
                         </a>
@@ -227,38 +227,37 @@
                 </ul>
             </div>
             <div class="right">
-
                 <!-- swiper -->
-                <div class="swiper-container">
+                <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div class="swiper-slide stop-swiping">
                             <a href=""><img src="./uploads/1ff7cd5850e5fac28219402daf88f68f.webp"
                                     style="width:1226px ;" /></a>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide stop-swiping">
                             <a href=""><img src="./uploads/36b45c624f42fa81732457e3f9773dbd.webp"
                                     style="width:1226px ;" /></a>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide stop-swiping">
                             <a href=""><img src="./uploads/27c7f7fe4e1621bee3fc4acedbe3d9dd.jpg"
                                     style="width:1226px ;" /></a>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide stop-swiping">
                             <a href=""><img src="./uploads/143ceae1731ac47fe7fa68dde2978bdc.webp"
                                     style="width:1226px ;" /></a>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide stop-swiping">
                             <a href=""><img src="./uploads/987c34b474be111ba87f0321082eb2f3.webp"
                                     style="width:1226px ;" /></a>
                         </div>
                     </div>
                     <!-- 如果需要分页器 -->
                     <div class="swiper-pagination"></div>
-
                     <!-- 如果需要导航按钮 -->
                     <div class="swiper-button-prev swiper-button-black"></div>
                     <div class="swiper-button-next swiper-button-black"></div>
                 </div>
+                
                 <!-- 轮播图底下小区域 -->
                 <div class="banner_bot">
                     <div class="ban_l">
@@ -784,6 +783,7 @@
             </li>
             {{/each}}
         </script>
+        <!-- 箱包模板 -->
         <script type="text/html" id="tlp-bags">
             {{each bags}}
             <li>
@@ -795,15 +795,30 @@
             {{/each}}
         </script>
         <!-- swiper -->
+        <script src="./js/swiper-bundle.min.js"></script>
         <script>
-            var swiper = new Swiper('.swiper-container', {
-                pagination: '.swiper-pagination',
-                paginationClickable: '.swiper-pagination',
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                spaceBetween: 30,
-                effect: 'fade'
-            });
+            var mySwiper = new Swiper('.swiper', {
+                direction: 'horizontal', // 垂直切换选项
+                loop: true, // 循环模式选项
+
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // 如果需要前进后退按钮
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                effect: 'fade',//切换效果
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                noSwiping: true,
+                noSwipingClass: 'stop-swiping',
+            })
             //定义手机对象数组
             var phone = [];
             for (var i = 0; i < 24; i++) {
@@ -917,7 +932,16 @@
             var bags_all = document.querySelector('#bags_all');
             bags_all.innerHTML = htmlstr;
         </script>
-
+        <style type="text/css">
+            .swiper {
+                --swiper-theme-color: #757575;
+                /* 设置Swiper风格 */
+                --swiper-navigation-color: #757575;
+                /* 单独设置按钮颜色 */
+                --swiper-navigation-size: 40px;
+                /* 设置按钮大小 */
+            }
+        </style>
 </body>
 
 </html>
