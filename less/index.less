@@ -4,7 +4,7 @@ body {
     background-color: #f5f5f5;
 }
 
-//元素浮动样式
+//元素阴影样式
 .shadow {
     box-shadow: 5px 10px 25px rgba(0, 0, 0, .2);
     transition: all 0.5s;
@@ -24,23 +24,56 @@ body {
     }
 }
 
-//购物车下拉样式
+//购物车下拉变化样式
 .cart_det_change {
     height: 100px !important;
     transition: all 0.5s;
 
 }
 
-//下载app下拉样式
+//下载app下拉变化样式
 .download_change {
     height: 148px !important;
     transition: all 0.5s;
 }
 
-//轮播图区域导航弹出样式
+//轮播图区域导航弹出变化样式
 .area_change {
     width: 992px !important;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, .2);
+}
+//轮播图区域导航弹出样式
+.bannerhide_area {
+    position: absolute;
+    top: -20px;
+    left: 234px;
+    width: 0;
+    height: 460px;
+    overflow: hidden; 
+    background-color: #fff;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        li {
+            width: 25%;
+            height: 76.666px!important;
+            line-height: 76.66px;
+            padding-left: 0!important;
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                line-height: 76.66px;
+                color: #333!important;
+                img {
+                    margin-left: 20px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
 }
 
 //头部样式
@@ -301,44 +334,7 @@ body {
                     right: 20px;
                 }
 
-                .phone_area {
-                    position: absolute;
-                    top: -20px;
-                    left: 234px;
-                    width: 0;
-                    height: 460px;
-                    overflow: hidden;
-                    z-index: 99;
-                    background-color: #fff;
-
-                    ul {
-                        display: flex;
-                        flex-wrap: wrap;
-
-                        li {
-                            width: 25%;
-                            height: 76.666px;
-                            line-height: 76.66px;
-
-                            a {
-                                display: inline-block;
-                                width: 100%;
-                                height: 100%;
-                                line-height: 76.66px;
-                                color: #333;
-
-                                img {
-                                    margin-left: 20px;
-                                    vertical-align: middle;
-                                }
-
-                                span {
-                                    height: 40px;
-                                }
-                            }
-                        }
-                    }
-                }
+                
             }
         }
     }
