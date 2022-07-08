@@ -70,7 +70,7 @@ body {
   width: 25%;
   height: 76.666px !important;
   line-height: 76.66px;
-  padding-left: 0!important;
+  padding-left: 0 !important;
 }
 .bannerhide_area ul li a {
   display: inline-block;
@@ -296,23 +296,32 @@ body {
   position: absolute;
   right: 20px;
 }
-.banner_area .right .swiper-container {
+.banner_area .right {
+  position: relative;
+}
+.banner_area .right .swiper {
   position: relative;
   top: 0;
   left: 0;
   width: 1226px;
   height: 460px;
 }
-.banner_area .right .swiper-container .swiper-button-prev {
+.banner_area .right .swiper .swiper-button-prev {
   position: absolute;
   left: 244px;
 }
-.banner_area .right .swiper-pagination {
+.banner_area .right .swiper .swiper-pagination {
   position: absolute;
   width: 400px;
   left: auto;
   right: 30px;
   bottom: 20px;
+}
+.banner_area .right .swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  background: hsla(0, 0%, 100%, 0.4);
 }
 .banner_area .banner_bot {
   margin-top: 14px;
