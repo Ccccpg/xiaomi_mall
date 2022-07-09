@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3457375 */
-  src: url('iconfont.woff2?t=1656936887048') format('woff2'),
-       url('iconfont.woff?t=1656936887048') format('woff'),
-       url('iconfont.ttf?t=1656936887048') format('truetype');
+  src: url('iconfont.woff2?t=1657333993088') format('woff2'),
+       url('iconfont.woff?t=1657333993088') format('woff'),
+       url('iconfont.ttf?t=1657333993088') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Rightbutton:before {
+  content: "\e765";
 }
 
 .icon-messagewhite:before {
