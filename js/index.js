@@ -1,13 +1,13 @@
 window.addEventListener('load', function () {
 
-     //动画函数
+    //动画函数
     function animate(obj, num, callback) {
         clearTimeout(obj.timer);
         obj.timer = setInterval(function () {
             var step = (num - obj.offsetTop) / 2;
-            console.log('offset:'+obj.offsetTop);
+            console.log('offset:' + obj.offsetTop);
             console.log(step);
-            if (step >0) {
+            if (step > 0) {
                 step = Math.ceil(step);
             } else {
                 step = Math.floor(step);
@@ -23,7 +23,7 @@ window.addEventListener('load', function () {
     }
     //元素阴影动效
     var fl = document.querySelectorAll('#float');
-    for(var i=0;i<fl.length;i++){
+    for (var i = 0; i < fl.length; i++) {
         fl[i].addEventListener('mouseenter', function () {
             this.classList.add('shadow');
         })
@@ -33,46 +33,47 @@ window.addEventListener('load', function () {
     }
     //购物车
     var cart = document.querySelector('.cart');
-    var cart_detail=document.querySelector('.cart_detail');
-    var con=document.querySelector('.content');
-    var flag=true
-    cart.addEventListener('mouseenter',function(){
-        
-            flag=false;
-            cart.classList.add('cart_change');
-            con.classList.add('cart_det_change');
-            con.classList.add('shadow');
-            flag=true;
-            setTimeout(function(){
-                con.innerHTML = '购物车中还没有商品，赶紧选购吧！';
-            },300)
-            
-        
-        
+    var con = document.querySelector('.content');
+    var flag = true
+    cart.addEventListener('mouseenter', function () {
+
+        flag = false;
+        cart.classList.add('cart_change');
+        con.classList.add('cart_det_change');
+        con.classList.add('shadow');
+        flag = true;
+        setTimeout(function () {
+            con.innerHTML = '购物车中还没有商品，赶紧选购吧！';
+        }, 300)
+
+
+
     })
     cart.addEventListener('mouseleave', function () {
         con.innerHTML = '';
         cart.classList.remove('cart_change');
         con.classList.remove('cart_det_change');
-       
-        
+
+
     })
     //app下载
     var download_content = document.querySelector('.download_content');
     var download = document.querySelector('.dl_app');
-    download.addEventListener('mouseenter',function(){
-        download_content.classList.add('download_change');
+    download.addEventListener('mouseenter', function () {
+        download_content.classList.add('download_out');
+        download_content.classList.remove('download_in');
     });
     download.addEventListener('mouseleave', function () {
-        download_content.classList.remove('download_change');
+        download_content.classList.remove('download_out');
+        download_content.classList.add('download_in');
     })
     //轮播图区 手机 类别域导航栏交互
-    var phone=document.querySelector('.phone');
+    var phone = document.querySelector('.phone');
     var bannerhide_area = null;
-    phone.addEventListener('mouseenter',function(){
-        bannerhide_area=document.querySelector('.phone>a>.bannerhide_area');
+    phone.addEventListener('mouseenter', function () {
+        bannerhide_area = document.querySelector('.phone>a>.bannerhide_area');
         bannerhide_area.classList.add('area_change');
-        bannerhide_area.style.backgroudColor ='#fff!important';
+        bannerhide_area.style.backgroudColor = '#fff!important';
     })
     phone.addEventListener('mouseleave', function () {
         bannerhide_area = document.querySelector('.phone>a>.bannerhide_area');
@@ -168,4 +169,149 @@ window.addEventListener('load', function () {
         bannerhide_area = document.querySelector('.bags>a>.bannerhide_area');
         bannerhide_area.classList.remove('area_change');
     })
+
+    //logo区域的导航 xiaomi手机 类别交互
+    var nav_ph_content = null;
+    var mi_phone = document.querySelector('.mi_phone');
+    mi_phone.addEventListener('mouseenter', function () {
+        nav_ph_content = document.querySelector('.mi_phone>a>.nav_ph_content');
+        nav_ph_content.classList.remove('nav_content_in');
+        nav_ph_content.classList.add('nav_content_out');
+
+    })
+    mi_phone.addEventListener('mouseleave', function () {
+        nav_ph_content = document.querySelector('.mi_phone>a>.nav_ph_content');
+        nav_ph_content.classList.add('nav_content_in');
+        nav_ph_content.classList.remove('nav_content_out');
+
+    })
+    //logo区域的导航 redmi手机 类别交互
+    var redmi_phone = document.querySelector('.redmi_phone');
+
+    redmi_phone.addEventListener('mouseenter', function () {
+        nav_ph_content = document.querySelector('.redmi_phone>a>.nav_ph_content');
+        nav_ph_content.classList.remove('nav_content_in');
+        nav_ph_content.classList.add('nav_content_out');
+
+    })
+    redmi_phone.addEventListener('mouseleave', function () {
+        nav_ph_content = document.querySelector('.redmi_phone>a>.nav_ph_content');
+        nav_ph_content.classList.add('nav_content_in');
+        nav_ph_content.classList.remove('nav_content_out');
+
+    })
+    //logo区域的导航 电视 类别交互
+    var mi_tv = document.querySelector('.mi_tv');
+
+    mi_tv.addEventListener('mouseenter', function () {
+        nav_ph_content = document.querySelector('.mi_tv>a>.nav_ph_content');
+        nav_ph_content.classList.remove('nav_content_in');
+        nav_ph_content.classList.add('nav_content_out');
+
+    })
+    mi_tv.addEventListener('mouseleave', function () {
+        nav_ph_content = document.querySelector('.mi_tv>a>.nav_ph_content');
+        nav_ph_content.classList.add('nav_content_in');
+        nav_ph_content.classList.remove('nav_content_out');
+
+    })
+    //logo区域的导航 电脑 类别交互
+    var mi_com = document.querySelector('.mi_com');
+
+    mi_com.addEventListener('mouseenter', function () {
+        nav_ph_content = document.querySelector('.mi_com>a>.nav_ph_content');
+        nav_ph_content.classList.remove('nav_content_in');
+        nav_ph_content.classList.add('nav_content_out');
+
+    })
+    mi_com.addEventListener('mouseleave', function () {
+        nav_ph_content = document.querySelector('.mi_com>a>.nav_ph_content');
+        nav_ph_content.classList.add('nav_content_in');
+        nav_ph_content.classList.remove('nav_content_out');
+
+    })
+    //logo区域的导航 平板 类别交互
+    var mi_pad = document.querySelector('.mi_pad');
+
+    mi_pad.addEventListener('mouseenter', function () {
+        nav_ph_content = document.querySelector('.mi_pad>a>.nav_ph_content');
+        nav_ph_content.classList.remove('nav_content_in');
+        nav_ph_content.classList.add('nav_content_out');
+
+    })
+    mi_pad.addEventListener('mouseleave', function () {
+        nav_ph_content = document.querySelector('.mi_pad>a>.nav_ph_content');
+        nav_ph_content.classList.add('nav_content_in');
+        nav_ph_content.classList.remove('nav_content_out');
+
+    })
+    //logo区域的导航 家电 类别交互
+    var mi_jiadian = document.querySelector('.mi_jiadian');
+
+    mi_jiadian.addEventListener('mouseenter', function () {
+        nav_ph_content = document.querySelector('.mi_jiadian>a>.nav_ph_content');
+        nav_ph_content.classList.remove('nav_content_in');
+        nav_ph_content.classList.add('nav_content_out');
+
+    })
+    mi_jiadian.addEventListener('mouseleave', function () {
+        nav_ph_content = document.querySelector('.mi_jiadian>a>.nav_ph_content');
+        nav_ph_content.classList.add('nav_content_in');
+        nav_ph_content.classList.remove('nav_content_out');
+
+    })
+    //logo区域的导航 路由器 类别交互
+    var mi_luyou = document.querySelector('.mi_luyou');
+
+    mi_luyou.addEventListener('mouseenter', function () {
+        nav_ph_content = document.querySelector('.mi_luyou>a>.nav_ph_content');
+        nav_ph_content.classList.remove('nav_content_in');
+        nav_ph_content.classList.add('nav_content_out');
+
+    })
+    mi_luyou.addEventListener('mouseleave', function () {
+        nav_ph_content = document.querySelector('.mi_luyou>a>.nav_ph_content');
+        nav_ph_content.classList.add('nav_content_in');
+        nav_ph_content.classList.remove('nav_content_out');
+
+    })
+    //
+    var search_inpt = document.querySelector('.search_inpt');
+    var search_div = document.querySelector('.search_div');
+    var sub = document.querySelector('.sub');
+    var suggest = document.querySelector('.suggest')
+    var str = '';
+    if (search_div.innerHTML == '') {
+        search_div.innerHTML = '小米手机';
+    }
+
+    search_inpt.addEventListener('focus', function () {
+        sub.classList.add('sub_focus');
+        sub.classList.remove('sub_leave');
+        suggest.classList.add('suggest_out');
+        suggest.classList.remove('suggest_in');
+        search_inpt.classList.add('search_inpt_focus');
+        search_inpt.classList.remove('search_inpt_leave');
+    })
+    search_inpt.addEventListener('keyup', function () {
+        str = search_inpt.value;
+        if (str != '') {
+            search_div.innerHTML = '';
+        } else {
+            search_div.innerHTML = '小米手机';
+        }
+    })
+    search_inpt.addEventListener('blur', function () {
+        if (search_div.innerHTML ==''){
+            search_div.innerHTML = '小米手机';
+        }
+        search_inpt.value='';
+        sub.classList.remove('sub_focus');
+        suggest.classList.remove('suggest_out');
+        suggest.classList.add('suggest_in');
+        sub.classList.add('sub_leave');
+        search_inpt.classList.remove('search_inpt_focus');
+        search_inpt.classList.add('search_inpt_leave');
+    })
+
 })
