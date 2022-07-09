@@ -18,7 +18,7 @@ body {
         transition: all 0.5s;
 
         span {
-            color: #ff6700 !important;
+            color: #424242 !important;
             transition: all 0.5s;
         }
     }
@@ -32,8 +32,14 @@ body {
 }
 
 //下载app下拉变化样式
-.download_change {
+.download_out {
     height: 148px !important;
+    transition: all 0.5s;
+}
+
+//下载app返回变化样式
+.download_in {
+    height: 0 !important;
     transition: all 0.5s;
 }
 
@@ -81,6 +87,67 @@ body {
     }
 }
 
+//log区域的导航弹出变化样式
+.nav_content_out {
+    height: 229px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    border-top: 1px solid #e0e0e0;
+    transition: all 0.4s;
+}
+
+//log区域的导航弹出变化样式
+.nav_content_in {
+    height: 0 !important;
+    transition: all 0.4s;
+    border: 0;
+}
+
+//点击搜索框边框颜色变化样式
+.search_inpt_focus {
+    border: 1px solid #ff6700 !important;
+    transition: all 0.4s;
+}
+
+.sub_focus {
+    border-top: 1px solid #ff6700 !important;
+    border-right: 1px solid #ff6700 !important;
+    border-bottom: 1px solid #ff6700 !important;
+    border-left: 0 !important;
+    transition: all 0.4s;
+}
+
+// border: 1px solid #e0e0e0;
+//离开搜索框边框颜色变化样式
+.search_inpt_leave {
+    border: 1px solid #e0e0e0 !important;
+    transition: all 0.4s;
+}
+
+.sub_leave {
+    border-top: 1px solid #e0e0e0 !important;
+    border-right: 1px solid #e0e0e0 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    border-left: 0 !important;
+    transition: all 0.4s;
+}
+
+//搜索下拉建议变化样式
+.suggest_out {
+    height: 241px !important;
+    border-top: 0;
+    border-right: 1px solid #ff6700;
+    border-bottom: 1px solid #ff6700;
+    border-left: 1px solid #ff6700;
+    transition: all 0.4s;
+}
+
+//搜索返回建议变化样式
+.suggest_in {
+    height: 0 !important;
+    border-bottom: 0 !important;
+    transition: all 0.4s;
+}
+
 //头部样式
 .header {
     width: 100%;
@@ -95,7 +162,7 @@ body {
         span {
             color: #424242;
             font-size: 12px;
-            margin: 0 5px;
+            margin: 0 7px;
         }
 
         .left {
@@ -116,6 +183,10 @@ body {
                 a {
                     color: #b0b0b0;
                     font-size: 12px;
+
+                    &:hover {
+                        color: #fff;
+                    }
                 }
 
                 .download {
@@ -176,6 +247,9 @@ body {
                         color: #b0b0b0;
                         font-size: 12px;
 
+                        &:hover {
+                            color: #fff;
+                        }
                     }
                 }
 
@@ -202,6 +276,7 @@ body {
 
                             .content {
                                 position: absolute;
+                                z-index: 4;
                                 top: 40px;
                                 right: 0;
                                 background-color: #fff;
@@ -239,234 +314,336 @@ body {
 }
 
 //主体头部样式
-.main_top {
-    background-color: #fff;
-    z-index: -2;
-    width: 1226px;
-    height: 100px;
-    line-height: 100px;
-
-    .logo_pic {
-        float: left;
-        margin-top: 22px;
-        width: 56px;
-        height: 56px;
-        background: url(../images/logo-mi2.png);
-        background-size: 56px;
-    }
-
-    .nav {
-        float: left;
-        margin-left: 175px;
-
-        ul {
-            display: flex;
-            width: 628px;
-            height: 100%;
-            justify-content: space-between;
-
-            li {
-                a {
-                    color: #333;
-                }
-            }
-        }
-    }
-
-    .search {
-        margin-top: 25px;
-        float: right;
-
-        .text {
-            padding: 5px;
-            float: left;
-            width: 223px;
-            height: 48px;
-            outline: none;
-            color: #757575;
-            border: 1px solid #e0e0e0;
-        }
-
-        .sub {
-            float: left;
-            width: 48px;
-            height: 48px;
-            border: 1px solid #e0e0e0;
-            background-color: #fff;
-            border-left: 0;
-            font-family: iconfont;
-            font-size: 24px;
-            font-weight: 800;
-            color: #616161;
-
-            &:hover {
-                color: #fff;
-                background-color: #ff6700;
-                transition: all 0.3s;
-            }
-        }
-    }
-}
-
-//轮播图区域
-.banner_area {
-    width: 1226px;
+.main_top_out {
     position: relative;
+    background-color: #fff;
+    padding-bottom: 26px;
 
-    .left {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 20px 0;
-        width: 234px;
-        height: 460px;
-        background-color: rgba(105, 101, 101, .6);
-        z-index: 2;
-
-        &>ul>li:hover {
-            background-color: #ff6700;
-        }
-
-        li {
-            position: relative;
-            height: 42px;
-            line-height: 42px;
-            padding-left: 30px;
-
-            a {
-                color: #fff;
-                font-size: 14px;
-
-                span {
-                    position: absolute;
-                    right: 20px;
-                }
+    .main_top {
+        width: 1226px;
+        height: 100px;
 
 
-            }
-        }
-    }
-
-    .right {
-
-        position: relative;
-
-        .swiper {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 1226px;
-            height: 460px;
-
-            .swiper-button-prev {
-                position: absolute;
-                left: 244px;
-            }
-
-            .swiper-pagination {
-                position: absolute;
-                width: 400px;
-                left: auto;
-                right: 30px;
-                bottom: 20px;
-                .swiper-pagination-bullet{
-                    width: 10px;
-                    height: 10px;
-                    border: 2px solid rgba(0,0,0, 0.4);
-                    background: hsla(0, 0%, 100%, .4);
-
-                }
-            }
-        }
-
-
-
-
-
-    }
-
-    .banner_bot {
-        margin-top: 14px;
-        display: flex;
-        justify-content: space-between;
-
-        .ban_l {
+        .logo_pic {
             float: left;
-            padding: 3px;
-            width: 234px;
-            height: 170px;
-            background-color: #5f5750;
+            margin-top: 22px;
+            width: 56px;
+            height: 56px;
+            background: url(../images/logo-mi2.png);
+            background-size: 56px;
+        }
+
+        .nav {
+            float: left;
+            margin-left: 175px;
 
             ul {
+                display: flex;
+                width: 628px;
+                height: 100%;
+                line-height: 100px;
+                justify-content: space-between;
+
                 li {
-                    position: relative;
-                    float: left;
-                    padding: 18px 4px 0 4px;
-                    width: 76px;
-                    height: 82px;
-
                     a {
-                        text-align: center;
-                        margin-top: 18px;
-                        color: #fff;
-                        opacity: .7;
+                        color: #333;
 
-                        img {
-                            position: relative;
-                            top: 0;
-                            left: 23px;
-
-                            width: 24px;
-                            height: 24px;
+                        &:hover {
+                            color: #ff6700;
                         }
 
-                        div {
-                            font-size: 12px;
-                        }
-
-                        &::before {
+                        .nav_ph_content {
                             position: absolute;
-                            content: "";
-                            background: #665e57;
-                            top: -1px;
-                            left: 6px;
-                            width: 64px;
-                            height: 1px;
-                        }
-
-                        &::after {
-                            position: absolute;
-                            content: "";
-                            background: #665e57;
-                            top: 6px;
+                            top: 100px;
                             left: 0;
-                            width: 1px;
-                            height: 70px;
+                            z-index: 99;
+                            width: 1903px;
+                            height: 0;
+                            background-color: #fff;
+                            overflow: hidden;
+
+                            div {
+                                display: flex;
+
+                                .one {
+                                    display: flex;
+                                    padding-top: 25px;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    width: 16.66%;
+                                    text-align: center;
+
+                                    img {
+                                        width: 160px;
+                                        height: 110px;
+                                        margin-bottom: 16px;
+                                    }
+
+                                    p,
+                                    span {
+                                        display: inline-block;
+                                        width: 180px;
+                                        height: auto;
+                                        line-height: 1.6;
+                                        font-size: 12px;
+                                    }
+
+                                    span {
+                                        color: #333;
+                                    }
+
+                                    p {
+                                        color: #ff6700;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-
             }
         }
 
-        .ban_r {
-            display: flex;
-            justify-content: space-between;
-            margin-left: 14px;
-            float: left;
-            flex: 1;
+        .search {
+            position: relative;
+            margin-top: 25px;
+            float: right;
 
-            a {
-                display: inline-block;
-                width: 316px;
-                height: 170px;
+            .search_div {
+                padding: 10px;
+                float: left;
+                width: 245px;
+                height: 48px;
+                line-height: 28px;
+                font-size: 16px;
+                color: #757575;
+            }
 
-                img {
-                    width: 316px;
+            .search_inpt {
+                position: absolute;
+                background: rgba(0, 0, 0, 0);
+                top: 0;
+                left: 0;
+                padding: 10px;
+                width: 245px;
+                height: 50px;
+                outline: none;
+                color: #757575;
+                font-size: 16px;
+                border: 1px solid #e0e0e0;
+            }
+
+
+            .sub {
+                float: left;
+                width: 50px;
+                height: 50px;
+                border-top: 1px solid #e0e0e0;
+                border-right: 1px solid #e0e0e0;
+                border-bottom: 1px solid #e0e0e0;
+                border-left: 0;
+                background-color: #fff;
+                font-family: iconfont;
+                font-size: 24px;
+                font-weight: 800;
+                color: #616161;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #ff6700;
+                    transition: all 0.3s;
+                }
+            }
+
+            .suggest {
+                position: absolute;
+                z-index: 3;
+                top: 50px;
+                left: 0;
+                width: 245px;
+                // height: 241px;
+                height: 0;
+                overflow: hidden;
+                background-color: #fff;
+
+                ul {
+
+                    li {
+                        padding-left: 10px;
+                        height: 29.87px;
+                        line-height: 29.87px;
+
+                        a {
+                            font-size: 12px;
+                            color: #757575;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //轮播图区域
+    .banner_area {
+        width: 1226px;
+        position: relative;
+
+        .left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 20px 0;
+            width: 234px;
+            height: 460px;
+            background-color: rgba(105, 101, 101, .6);
+            z-index: 2;
+
+            &>ul>li:hover {
+                background-color: #ff6700;
+            }
+
+            li {
+                position: relative;
+                height: 42px;
+                line-height: 42px;
+                padding-left: 30px;
+
+                a {
+                    color: #fff;
+                    font-size: 14px;
+
+                    span {
+                        position: absolute;
+                        right: 20px;
+                    }
+
+
                 }
             }
         }
 
+        .right {
+
+            position: relative;
+
+            .swiper {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 1226px;
+                height: 460px;
+
+                .swiper-button-prev {
+                    position: absolute;
+                    left: 244px;
+                }
+
+                .swiper-pagination {
+                    position: absolute;
+                    width: 400px;
+                    left: auto;
+                    right: 30px;
+                    bottom: 20px;
+
+                    .swiper-pagination-bullet {
+                        width: 10px;
+                        height: 10px;
+                        border: 2px solid rgba(0, 0, 0, 0.4);
+                        background: hsla(0, 0%, 100%, .4);
+
+                    }
+                }
+            }
+
+
+
+
+
+        }
+
+        .banner_bot {
+            margin-top: 14px;
+            display: flex;
+            justify-content: space-between;
+
+            .ban_l {
+                float: left;
+                padding: 3px;
+                width: 234px;
+                height: 170px;
+                background-color: #5f5750;
+
+                ul {
+                    li {
+                        position: relative;
+                        float: left;
+                        padding: 18px 4px 0 4px;
+                        width: 76px;
+                        height: 82px;
+
+                        a {
+                            text-align: center;
+                            margin-top: 18px;
+                            color: #fff;
+                            opacity: .7;
+
+                            img {
+                                position: relative;
+                                top: 0;
+                                left: 23px;
+
+                                width: 24px;
+                                height: 24px;
+                            }
+
+                            div {
+                                font-size: 12px;
+                            }
+
+                            &::before {
+                                position: absolute;
+                                content: "";
+                                background: #665e57;
+                                top: -1px;
+                                left: 6px;
+                                width: 64px;
+                                height: 1px;
+                            }
+
+                            &::after {
+                                position: absolute;
+                                content: "";
+                                background: #665e57;
+                                top: 6px;
+                                left: 0;
+                                width: 1px;
+                                height: 70px;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .ban_r {
+                display: flex;
+                justify-content: space-between;
+                margin-left: 14px;
+                float: left;
+                flex: 1;
+
+                a {
+                    display: inline-block;
+                    width: 316px;
+                    height: 170px;
+
+                    img {
+                        width: 316px;
+                    }
+                }
+            }
+
+        }
     }
 }
 
@@ -498,7 +675,30 @@ body {
             font-size: 16px;
             line-height: 58px;
             color: #424242;
+
+            i {
+                width: 12px;
+                height: 12px;
+                padding: 4px;
+                font-size: 12px;
+                margin-left: 8px;
+                background-color: #b0b0b0;
+                color: #fff;
+                border-radius: 50%;
+            }
+
+            &:hover {
+                color: #ff6700 !important;
+
+                i {
+                    background-color: #ff6700;
+                    transition: all 0.6s;
+                }
+
+                transition: all 0.6s;
+            }
         }
+
     }
 
     .items_bot {
